@@ -8,12 +8,12 @@ trn_X, test_X, trn_y, test_y = train_test_split(X, y, random_state=1)
 
 # model
 for n in [1, 3, 5, 7, 10]:
-    clf = KNeighborsClassifier(n_neighbors=n)
-    clf.fit(trn_X, trn_y)
+    reg = KNeighborsClassifier(n_neighbors=n)
+    reg.fit(trn_X, trn_y)
 
     # predict
-    pred = clf.predict(test_X)
+    pred = reg.predict(test_X)
     print(f"The prediction is {pred}")
 
     # score
-    print(f"The score of {n} is {clf.score(test_X, test_y)}")
+    print(f"The score of {n} is {reg.score(test_X, test_y)}")
